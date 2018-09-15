@@ -23,6 +23,7 @@ window.onload = function() {
   calculateWindowHeight();
   
   setTimeout(function() {
+    document.querySelector("#loading-container").style.display = "none";
     landingImg_color.classList.add("fadeIn");
     main.classList.add("fadeIn");
     html.style.overflow = "visible";
