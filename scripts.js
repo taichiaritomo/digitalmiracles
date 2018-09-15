@@ -11,9 +11,25 @@ window.onresize = function() {
   calculateWindowHeight();
 };
 
+var landingImg_color = document.querySelector("#landing-color"),
+    html = document.querySelector("html");
+
+html.style.overflow = "hidden";
+landingImg_color.classList.add("readyToFadeIn");
+
 window.onload = function() {
   calculateWindowHeight();
+  
+  setTimeout(function() {
+    landingImg_color.classList.add("fadeIn");
+    html.style.overflow = "visible";
+  }, 500);
+  
 };
+
+window.onunload = function() {
+  window.scrollTo(0,0);
+}
 
 
 
@@ -55,27 +71,33 @@ function checkMostlyVisible(elm) {
 function loop(){
   var y = pY();
     
-    // Didn't scroll
-    if (lastPosition == y) { // Avoid calculations if not needed
-        scroll( loop );
-        return false;
+  // Didn't scroll
+  if (lastPosition == y) { // Avoid calculations if not needed
+      scroll( loop );
+      return false;
+  }
+  // Scrolled
+  else {
+      lastPosition = y;
+
+    if (checkMostlyVisible(preview_efcc)) {
+      var rect = preview_efcc.getBoundingClientRect();
+      img_efccback.style.marginTop = rect.top - 0.5*windowHeight + "px";
     }
-    // Scrolled
-    else {
-        lastPosition = y;
-        
-        // Video Auto-play Logic
-        scroll( loop );
-      
-      if (checkMostlyVisible(preview_efcc)) {
-        var rect = preview_efcc.getBoundingClientRect();
-        img_efccback.style["top"] = rect.top - 0.5*windowHeight + "px";
-      }
-    }
+      // Video Auto-play Logic
+      scroll( loop );
+  }
 }
 
 loop(); // Call the loop for the first time
 
+
+//window.onscroll = function() {
+//  if (checkMostlyVisible(preview_efcc)) {
+//        var rect = preview_efcc.getBoundingClientRect();
+//        img_efccback.style["top"] = rect.top - 0.5*windowHeight + "px";
+//  }
+//}
 
 
 
