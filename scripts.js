@@ -12,16 +12,19 @@ window.onresize = function() {
 };
 
 var landingImg_color = document.querySelector("#landing-color"),
-    html = document.querySelector("html");
+    html = document.querySelector("html"),
+    main = document.querySelector("main");
 
 html.style.overflow = "hidden";
 landingImg_color.classList.add("readyToFadeIn");
+main.classList.add("readyToFadeIn");
 
 window.onload = function() {
   calculateWindowHeight();
   
   setTimeout(function() {
     landingImg_color.classList.add("fadeIn");
+    main.classList.add("fadeIn");
     html.style.overflow = "visible";
   }, 500);
   

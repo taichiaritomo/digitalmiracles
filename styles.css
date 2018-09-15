@@ -55,11 +55,11 @@ body {
   left: 0;
 }
 
-#landing-color.readyToFadeIn {
+.readyToFadeIn {
   opacity: 0;
 }
 
-#landing-color.fadeIn {
+.fadeIn {
   transition: opacity 0.25s linear;
   opacity: 1;
 }
