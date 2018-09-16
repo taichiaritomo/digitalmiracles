@@ -53,16 +53,22 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  cursor: s-resize;
 }
 
 .readyToFadeIn {
   opacity: 0;
+  pointer-events: none;
 }
 
 .fadeIn {
   transition: opacity 0.25s linear;
   opacity: 1;
+  
+}
+
+#landing-color.fadeIn {
+  pointer-events: all;
+  cursor: s-resize;
 }
 
 #blurb {
