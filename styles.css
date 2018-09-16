@@ -63,7 +63,7 @@ body {
 .fadeIn {
   transition: opacity 0.25s linear;
   opacity: 1;
-  pointer-events: auto;
+  pointer-events: all;
 }
 
 #landing-color.fadeIn {
