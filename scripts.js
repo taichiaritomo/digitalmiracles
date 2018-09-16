@@ -152,7 +152,7 @@ var interval_time = 500;
 
 function updateImage() {
   setTimeout(function() {
-    taichipink_img.src="img/taichi-" +  (taichipink_img_index+1) + ".jpg";
+    taichipink_img.src="img/taichi-" +  (taichipink_img_index+1) + ".png";
     taichipink_img_index = (taichipink_img_index + 1) % 4;
     updateImage();
   }, interval_time);
