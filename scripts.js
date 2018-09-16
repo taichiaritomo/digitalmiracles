@@ -35,6 +35,17 @@ window.onunload = function() {
   window.scrollTo(0,0);
 }
 
+landingImg_color.onclick = function() {
+  // Scroll to a certain element
+  if (document.body.scrollIntoView) {
+    document.querySelector('#blurb').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  } else {
+    window.location.href = "#blurb";
+  }
+}
+
 
 
 /************************* UTILITY AND POLYFILLS *****************************/
